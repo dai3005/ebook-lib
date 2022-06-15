@@ -9,7 +9,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const MuiNavbar = ({ pages }) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -31,9 +31,10 @@ const MuiNavbar = ({ pages }) => {
       />
     </Link>
   );
+  let navigate = useNavigate();
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" color="navbarColor">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}>
@@ -112,7 +113,13 @@ const MuiNavbar = ({ pages }) => {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Button variant="contained">Sign in</Button>
+            <Button
+              variant="contained"
+              onClick={() => navigate('/sign-in')}
+              color="btnColor"
+            >
+              Sign in
+            </Button>
           </Box>
         </Toolbar>
       </Container>

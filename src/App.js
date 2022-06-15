@@ -7,10 +7,28 @@ import NewBooks from './pages/Newbooks';
 import FAQ from './pages/FAQ';
 import MuiNavbar from './Components/MuiNavbar';
 import './App.css';
+import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
+import Forgot from './pages/Forgot';
+import { createTheme, ThemeProvider } from '@mui/material';
+
+const theme = createTheme({
+  palette: {
+    secondary: {
+      main: '#3e8ed0',
+    },
+    btnColor: {
+      main: '#cf2122',
+      contrastText: '#ffffff',
+    },
+    navbarColor: {
+      main: '#06121e',
+    },
+  },
+});
 
 const pages = [
   {
-    label: 'Home',
     path: '/',
     component: <HomePage />,
   },
@@ -39,18 +57,34 @@ const pages = [
     path: '/faq',
     component: <FAQ />,
   },
+  {
+    path: '/sign-in',
+    component: <SignIn />,
+  },
+  {
+    path: '/sign-up',
+    component: <SignUp />,
+  },
+  {
+    path: '/forgot',
+    component: <Forgot />,
+  },
 ];
 
 function App() {
   return (
-    <div>
-      <MuiNavbar pages={pages.slice(1)} />
+    <ThemeProvider theme={theme}>
+      <MuiNavbar
+        pages={pages.filter((e) => {
+          return e.label !== undefined;
+        })}
+      />
       <Routes>
         {pages.map((e) => (
-          <Route key={e.label} path={e.path} element={e.component} />
+          <Route key={e.path} path={e.path} element={e.component} />
         ))}
       </Routes>
-    </div>
+    </ThemeProvider>
   );
 }
 
