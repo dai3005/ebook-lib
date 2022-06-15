@@ -15,34 +15,33 @@ const SignIn = () => {
     <div className="container">
       <div className="form">
         <div className="sign-in-form">
-          <div className="form-header">Sign In</div>
+          <div className="form-header">Login</div>
           <TextField
             id="email"
-            label="Email"
-            variant="filled"
+            placeholder="Email"
             sx={inputStyle}
             margin="normal"
             size="small"
           />
           <TextField
             id="password"
-            label="Password"
-            variant="filled"
+            placeholder="Password"
+            type="password"
             margin="normal"
             size="small"
             sx={inputStyle}
           />
           <CustomBtn variant="contained" disableRipple color="#3e8ed0">
-            Đăng nhập
+            Login
           </CustomBtn>
 
           <CustomBtn variant="contained" disableRipple color={'#cf2122'}>
-            Đăng nhập với Google
+            Login with Google
           </CustomBtn>
         </div>
         <div className="form-footer">
-          <Link to="/sign-up">Sign Up</Link>
-          <Link to="/sign-up">Forgot Password</Link>
+          <Link to="/sign-up">Register</Link>
+          <Link to="/forgot">Forgot password?</Link>
         </div>
       </div>
     </div>
