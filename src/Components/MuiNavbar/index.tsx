@@ -117,11 +117,13 @@ const MuiNavbar: FC<propsPage> = ({ pages }) => {
           ></Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
-              <Link to={page.path} key={page.label}>
-                <Button sx={{ my: 2, color: 'white', display: 'block' }}>
-                  {page.label}
-                </Button>
-              </Link>
+              <Button
+                key={page.path}
+                onClick={() => navigate(page.path)}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                {page.label}
+              </Button>
             ))}
           </Box>
 

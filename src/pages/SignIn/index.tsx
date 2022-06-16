@@ -1,6 +1,6 @@
 import { TextField } from '@mui/material';
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { MouseEventHandler } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import CustomBtn from '../../Components/CustomButton';
 import './style.css';
 
@@ -9,6 +9,16 @@ const SignIn = () => {
     backgroundColor: 'white',
     width: '90%',
     borderRadius: '5px',
+  };
+  let homeNavigate = useNavigate();
+
+  const handleSubmit = () => {
+    setTimeout(() => {
+      let random = Math.random();
+      if (random <= 0.5) {
+        homeNavigate('/');
+      } else alert('Login Error');
+    }, 500);
   };
 
   return (
@@ -35,6 +45,8 @@ const SignIn = () => {
             variant="contained"
             disableRipple
             backgroundColor="#3e8ed0"
+            type="submit"
+            onClick={handleSubmit}
           >
             Login
           </CustomBtn>
