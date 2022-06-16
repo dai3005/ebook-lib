@@ -10,11 +10,24 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { Link, useNavigate } from 'react-router-dom';
+import { FC } from 'react';
 
-const MuiNavbar = ({ pages }) => {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
+export type Page = {
+  label?: string;
+  path: string;
+  component: any;
+};
 
-  const handleOpenNavMenu = (event) => {
+type propsPage = {
+  pages: Page[];
+};
+
+const MuiNavbar: FC<propsPage> = ({ pages }) => {
+  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
+    null
+  );
+
+  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
 
@@ -27,7 +40,7 @@ const MuiNavbar = ({ pages }) => {
       <img
         alt="logo"
         src={'https://xemphim.club/static/skin/logo-full.png'}
-        style={{ width: 150 }}
+        className={'logo'}
       />
     </Link>
   );
@@ -52,7 +65,7 @@ const MuiNavbar = ({ pages }) => {
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
-              size="large"
+              size={'large'}
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"

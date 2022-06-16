@@ -31,11 +31,19 @@ const SignIn = () => {
             size="small"
             sx={inputStyle}
           />
-          <CustomBtn variant="contained" disableRipple color="#3e8ed0">
+          <CustomBtn
+            variant="contained"
+            disableRipple
+            backgroundColor="#3e8ed0"
+          >
             Login
           </CustomBtn>
 
-          <CustomBtn variant="contained" disableRipple color={'#cf2122'}>
+          <CustomBtn
+            variant="contained"
+            disableRipple
+            backgroundColor={'#cf2122'}
+          >
             Login with Google
           </CustomBtn>
         </div>

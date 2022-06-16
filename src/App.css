@@ -15,3 +15,7 @@ body {
 html {
   font-family: Roboto;
 }
+
+.logo {
+  width: 150px;
+}

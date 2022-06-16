@@ -1,32 +1,37 @@
 import { TextField } from '@mui/material';
-import React, { useState } from 'react';
+import React, { FC } from 'react';
 import CustomBtn from '../../Components/CustomButton';
 
-const Forgot = () => {
+type Props = {
+  onSubmit: () => void;
+};
+
+const ResetPassword: FC<Props> = ({ onSubmit }) => {
   const inputStyle = {
     backgroundColor: 'white',
     width: '90%',
     borderRadius: '5px',
   };
-
-  const [step, setStep] = useState(0);
-
-  const handleSend = () => {};
-
   return (
     <div className="container">
       <div className="form">
         <div className="sign-in-form">
-          <div className="form-header">Password Recovery</div>
+          <div className="form-header">Reset Password</div>
           <TextField
             id="email"
-            placeholder="Email"
+            placeholder="Password"
+            type="password"
             sx={inputStyle}
             margin="normal"
             size="small"
           />
-          <CustomBtn variant="contained" disableRipple color="#3e8ed0">
-            Send
+          <CustomBtn
+            variant="contained"
+            disableRipple
+            backgroundColor="#3e8ed0"
+            onClick={onSubmit}
+          >
+            Reset
           </CustomBtn>
         </div>
       </div>
@@ -34,4 +39,4 @@ const Forgot = () => {
   );
 };
 
-export default Forgot;
+export default ResetPassword;
