@@ -12,8 +12,6 @@
 }
 .home-container {
   margin: auto;
-  display: grid-ms-grid;
-  gap: 8px;
   width: 90%;
   margin-top: 20px;
 }

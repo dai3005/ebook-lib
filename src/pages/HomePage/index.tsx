@@ -12,7 +12,7 @@ const Books: Book[] = [
     properties: 'New Books',
   },
   {
-    label: 'Ms. Marvel',
+    label: 'Ms. Marvel 123',
     author: 'Marvel',
     image: 'https://image.tmdb.org/t/p/w342/hJx9aFc8g32KjrW7mpv53cEvEDS.jpg',
     about: 'Film of Marvel',
