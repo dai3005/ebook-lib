@@ -1,0 +1,25 @@
+.home-filter {
+  display: flex;
+  margin: auto;
+  width: 90%;
+}
+.home-heading {
+  display: flex;
+  margin: auto;
+  width: 90%;
+  color: #fff;
+  margin-top: 50px;
+}
+.home-container {
+  margin: auto;
+  display: grid-ms-grid;
+  gap: 8px;
+  width: 90%;
+  margin-top: 20px;
+}
+
+.card {
+  position: relative;
+  background-color: #06121e;
+  overflow: hidden;
+}
