@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Book } from '../../models/Book';
-import './style.css';
-import ListItem from './listItem';
+import ListItem from '../../Components/ListItems';
 
 const Books: Book[] = [
   {

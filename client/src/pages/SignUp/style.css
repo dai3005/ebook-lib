@@ -8,7 +8,6 @@
   background-color: #363636;
   padding-bottom: 50px;
   border-radius: 5px;
-  margin-top: 50px;
 }
 .sign-in-form {
   display: flex;
@@ -22,16 +21,4 @@
   font-size: 30px;
   padding-bottom: 20px;
   text-transform: uppercase;
-}
-
-.form-footer {
-  padding-top: 30px;
-  display: flex;
-  justify-content: space-between;
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-}
-.form-footer {
-  color: #428bca;
 }

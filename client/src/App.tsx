@@ -79,11 +79,13 @@ function App() {
           return e.label !== undefined;
         })}
       />
-      <Routes>
-        {pages.map((e) => (
-          <Route key={e.path} path={e.path} element={e.component} />
-        ))}
-      </Routes>
+      <div style={{ marginTop: '100px' }}>
+        <Routes>
+          {pages.map((e) => (
+            <Route key={e.path} path={e.path} element={e.component} />
+          ))}
+        </Routes>
+      </div>
     </ThemeProvider>
   );
 }

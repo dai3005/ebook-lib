@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Popular = () => {
-  return <div>Popular</div>;
+  return <div className="mt-20">Popular</div>;
 };
 
 export default Popular;

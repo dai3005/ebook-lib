@@ -18,17 +18,19 @@ const ListItem: FC<propsList> = ({ Books, title }) => {
     <div>
       <div className="home-heading">{title}</div>
       <div className="home-container flex columns-5 row-3">
-        <Grid container columnGap={2} columns={16}>
+        <Grid container columnGap={5} columns={17}>
           {Books.map((book) => (
-            <Grid item xs={5} md={5} xl={3} key={book.label}>
-              <Card sx={{ maxWidth: 244, border: 'none' }} className={'card'}>
+            <Grid item xs={7} md={5} xl={3} key={book.label}>
+              <Card
+                sx={{
+                  maxWidth: 244,
+                  border: 'none',
+                  backgroundColor: '#06121e',
+                }}
+                className={'card'}
+              >
                 <CardActionArea>
-                  <CardMedia
-                    component="img"
-                    image={book.image}
-                    alt="green iguana"
-                    sx={{ objectFit: 'cover' }}
-                  />
+                  <CardMedia component="img" image={book.image} alt="poster" />
                   <CardContent sx={{ backgroundColor: '#06121e' }}>
                     <Typography
                       gutterBottom

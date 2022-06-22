@@ -9,8 +9,10 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
+import SearchIcon from '@mui/icons-material/Search';
 import { Link, useNavigate } from 'react-router-dom';
 import { FC } from 'react';
+import './style.css';
 
 export type Page = {
   label?: string;
@@ -47,8 +49,8 @@ const MuiNavbar: FC<propsPage> = ({ pages }) => {
   let navigate = useNavigate();
 
   return (
-    <AppBar position="static" color="navbarColor">
-      <Container maxWidth="xl">
+    <AppBar position="fixed" color="navbarColor">
+      <Container maxWidth="xl" sx={{ backgroundColor: '#06121e' }}>
         <Toolbar disableGutters>
           <Box sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}>
             <Logo />
@@ -70,7 +72,7 @@ const MuiNavbar: FC<propsPage> = ({ pages }) => {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
+              sx={{ color: 'white' }}
             >
               <MenuIcon />
             </IconButton>
@@ -115,14 +117,23 @@ const MuiNavbar: FC<propsPage> = ({ pages }) => {
               flexGrow: 1,
             }}
           ></Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box
+            sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}
+            className="button-nav"
+          >
             {pages.map((page) => (
               <Button
                 key={page.path}
                 onClick={() => navigate(page.path)}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {page.label}
+                {page.label === 'Search' ? (
+                  <div>
+                    <SearchIcon /> {page.label}
+                  </div>
+                ) : (
+                  page.label
+                )}
               </Button>
             ))}
           </Box>

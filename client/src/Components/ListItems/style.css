@@ -1,23 +1,20 @@
-.home-filter {
-  display: flex;
-  margin: auto;
-  width: 90%;
-}
 .home-heading {
   display: flex;
   margin: auto;
   width: 90%;
   color: #fff;
-  margin-top: 50px;
+  margin-bottom: 10px;
+  font-size: x-large;
+  font-weight: bold;
 }
 .home-container {
   margin: auto;
   width: 90%;
-  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .card {
-  position: relative;
   background-color: #06121e;
-  overflow: hidden;
+  border-width: 0 !important;
+  margin-bottom: 20px;
 }
