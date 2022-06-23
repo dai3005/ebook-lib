@@ -11,6 +11,7 @@ import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import Forgot from './pages/Forgot';
 import { createTheme, ThemeProvider } from '@mui/material';
+import ItemDetail from './Components/ItemDetail';
 
 const theme = createTheme({
   palette: {
@@ -68,6 +69,10 @@ const pages: Page[] = [
   {
     path: '/forgot',
     component: <Forgot />,
+  },
+  {
+    path: '/item-detail/:id',
+    component: <ItemDetail />,
   },
 ];
 

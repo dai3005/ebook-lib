@@ -1,16 +1,13 @@
-.home-heading {
-  display: flex;
+.home-container {
   margin: auto;
-  width: 90%;
+}
+.home-heading {
+  margin: auto;
+  display: block;
   color: #fff;
   margin-bottom: 10px;
   font-size: x-large;
   font-weight: bold;
-}
-.home-container {
-  margin: auto;
-  width: 90%;
-  margin-bottom: 20px;
 }
 
 .card {
