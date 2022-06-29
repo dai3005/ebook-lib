@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Popular = () => {
-  return <div>Popular</div>;
+  return <div style={{ color: 'white' }}>Popular</div>;
 };
 
 export default Popular;
