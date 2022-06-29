@@ -23,6 +23,7 @@ const CustomBtn: FC<BtnProps> = (props) => {
     display: 'block',
     '&:hover': {
       boxShadow: 'none',
+      opacity: 0.8,
       backgroundColor: backgroundColor,
     },
     '&:focus': {

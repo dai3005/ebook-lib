@@ -10,8 +10,9 @@ import './App.css';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import Forgot from './pages/Forgot';
-import { createTheme, ThemeProvider } from '@mui/material';
+import { Container, createTheme, ThemeProvider } from '@mui/material';
 import ItemDetail from './Components/ItemDetail';
+import Footer from './Components/Footer';
 
 const theme = createTheme({
   palette: {
@@ -84,13 +85,17 @@ function App() {
           return e.label !== undefined;
         })}
       />
-      <div style={{ marginTop: '100px' }}>
+      <Container
+        sx={{ marginTop: '100px', minHeight: '100vh' }}
+        maxWidth={'xl'}
+      >
         <Routes>
           {pages.map((e) => (
             <Route key={e.path} path={e.path} element={e.component} />
           ))}
         </Routes>
-      </div>
+      </Container>
+      <Footer />
     </ThemeProvider>
   );
 }

@@ -4,4 +4,7 @@ export type Book = {
   image: string;
   about: string;
   properties: string;
+  category: string;
+  bookDescription: string;
+  publishingCompany: string;
 };

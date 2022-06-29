@@ -12,47 +12,58 @@ const SignUp = () => {
 
   return (
     <div className="container">
-      <div className="form">
-        <div className="sign-in-form">
-          <div className="form-header">Register</div>
-          <TextField
-            id="email"
-            placeholder="Email"
-            sx={inputStyle}
-            margin="normal"
-            size="small"
-          />
-          <TextField
-            id="yourname"
-            placeholder="Your name"
-            margin="normal"
-            size="small"
-            sx={inputStyle}
-          />
-          <TextField
-            id="password"
-            placeholder="Password"
-            type="password"
-            margin="normal"
-            size="small"
-            sx={inputStyle}
-          />
-          <CustomBtn
-            variant="contained"
-            disableRipple
-            backgroundColor="#3e8ed0"
-          >
-            Register
-          </CustomBtn>
+      <div className="form-sign-in">
+        <form action="">
+          <div className="sign-in-form">
+            <div className="form-header">Register</div>
 
-          <CustomBtn
-            variant="contained"
-            disableRipple
-            backgroundColor={'#cf2122'}
-          >
-            Login with Google
-          </CustomBtn>
-        </div>
+            <TextField
+              id="email"
+              placeholder="Email"
+              type="email"
+              name="email"
+              sx={inputStyle}
+              margin="normal"
+              size="small"
+              autoFocus
+              required
+            />
+            <TextField
+              id="yourname"
+              type="text"
+              placeholder="Your name"
+              margin="normal"
+              size="small"
+              sx={inputStyle}
+              required
+            />
+            <TextField
+              id="password"
+              placeholder="Password"
+              type="password"
+              margin="normal"
+              size="small"
+              sx={inputStyle}
+              required
+            />
+            <CustomBtn
+              variant="contained"
+              disableRipple
+              backgroundColor="#3e8ed0"
+              type="submit"
+            >
+              Register
+            </CustomBtn>
+
+            <CustomBtn
+              variant="contained"
+              disableRipple
+              backgroundColor={'#cf2122'}
+            >
+              Login with Google
+            </CustomBtn>
+          </div>
+        </form>
       </div>
     </div>
   );

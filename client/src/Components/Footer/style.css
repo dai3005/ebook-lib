@@ -1,0 +1,12 @@
+.footer {
+  background-color: rgb(13, 74, 128);
+  text-align: center;
+  width: 100%;
+  bottom: 0;
+  margin-top: 30px;
+}
+.text-footer {
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

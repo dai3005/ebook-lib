@@ -11,7 +11,7 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import SearchIcon from '@mui/icons-material/Search';
 import { Link, useNavigate } from 'react-router-dom';
-import { FC } from 'react';
+import { FC, useState, useEffect } from 'react';
 import './style.css';
 
 export type Page = {
@@ -48,9 +48,31 @@ const MuiNavbar: FC<propsPage> = ({ pages }) => {
   );
   let navigate = useNavigate();
 
+  const [scrollY, setScrollY] = useState(0);
+
+  const handleScrollY = () => {
+    const scrollY = window.scrollY;
+    setScrollY(scrollY);
+  };
+
+  useEffect(() => {
+    handleScrollY();
+    window.addEventListener('scroll', handleScrollY);
+    return () => {
+      window.removeEventListener('scroll', handleScrollY);
+    };
+  }, []);
+
   return (
-    <AppBar position="fixed" color="navbarColor">
-      <Container maxWidth="xl" sx={{ backgroundColor: '#06121e' }}>
+    <AppBar
+      position="fixed"
+      sx={
+        scrollY < 50
+          ? { backgroundColor: 'transparent' }
+          : { backgroundColor: '#495371' }
+      }
+    >
+      <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}>
             <Logo />
@@ -144,7 +166,7 @@ const MuiNavbar: FC<propsPage> = ({ pages }) => {
               onClick={() => navigate('/sign-in')}
               color="btnColor"
             >
-              Sign in
+              Log In
             </Button>
           </Box>
         </Toolbar>

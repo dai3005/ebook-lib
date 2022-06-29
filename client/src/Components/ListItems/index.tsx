@@ -3,35 +3,28 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { CardActionArea } from '@mui/material';
 import { Book } from '../../models/Book';
 import './style.css';
 import { FC } from 'react';
 
 type propsList = {
-  Books: Book[];
+  books: Book[];
   title: string;
 };
 
-const ListItem: FC<propsList> = ({ Books, title }) => {
+const ListItem: FC<propsList> = ({ books, title }) => {
   const navigate = useNavigate();
 
   const handleClick = (id: string) => {
-    const page = id;
-    const title = 'Hello';
-    navigate('/item-detail', {
-      state: {
-        page,
-        title,
-      },
-    });
+    navigate(`/item-detail/${id}`);
   };
   return (
     <div className="home-container 2xl:w-max xl:w-4/5 md:w-11/12 sm:w-10/12">
       <div className="home-heading ">{title}</div>
       <div className="grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-7">
-        {Books.map((book) => (
+        {books.map((book) => (
           <Card
             sx={{
               maxWidth: 244,
