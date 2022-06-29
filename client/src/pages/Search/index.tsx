@@ -1,5 +1,5 @@
 import { TextField } from '@mui/material';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ListItem from '../../Components/ListItems';
 import { Book } from '../../models/Book';
@@ -79,6 +79,10 @@ const Search = () => {
     width: '90%',
     borderRadius: '5px',
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const navigate = useNavigate();
 
   const [keywords, setKeywords] = useState('');

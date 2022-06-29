@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Book } from '../../models/Book';
 import ListItem from '../../Components/ListItems';
+import { useEffect } from 'react';
 
 const Books: Book[] = [
   {
@@ -71,6 +72,10 @@ const Books: Book[] = [
 ];
 
 const HomePage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <ListItem

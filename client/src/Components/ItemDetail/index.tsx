@@ -1,5 +1,5 @@
 import { Button, Grid, Typography } from '@mui/material';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Book } from '../../models/Book';
 import DownloadIcon from '@mui/icons-material/Download';
@@ -80,6 +80,9 @@ const ItemDetail = () => {
   const filtered = Books?.find((book) => {
     return book.label === id;
   });
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div>

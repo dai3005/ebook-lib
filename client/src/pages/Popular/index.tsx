@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const Popular = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return <div style={{ color: 'white' }}>Popular</div>;
 };
 

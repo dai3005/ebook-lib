@@ -1,7 +1,7 @@
 .container {
-  align-items: center;
-  justify-content: center;
   display: flex;
+  width: 100%;
+  margin: auto;
 }
 .form {
   width: 40%;
@@ -29,8 +29,11 @@
   justify-content: space-between;
   width: 90%;
   margin-left: auto;
+  color: #428bca;
   margin-right: auto;
 }
-.form-footer {
-  color: #428bca;
+@media (max-width: 600px) {
+  .form-footer {
+    justify-content: end;
+  }
 }

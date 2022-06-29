@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import EmailVerification from './forgot';
 import OtpVerification from './otp-verification';
 import ResetPassword from './reset-password';
 
 const Forgot = () => {
   const nextPage = () => setStep((prev) => prev + 1);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const steps = [
     <EmailVerification onSubmit={nextPage} />,

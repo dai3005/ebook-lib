@@ -1,5 +1,5 @@
 import { TextField } from '@mui/material';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import CustomBtn from '../../Components/CustomButton';
 import './style.css';
@@ -21,12 +21,16 @@ const SignIn = () => {
     }, 500);
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="container">
       <div className="form">
-        <div className="sign-in-form">
-          <div className="form-header">Login</div>
-          <form>
+        <form>
+          <div className="sign-in-form">
+            <div className="form-header">Login</div>
             <TextField
               id="email"
               placeholder="Email"
@@ -60,12 +64,12 @@ const SignIn = () => {
             >
               Login with Google
             </CustomBtn>
-          </form>
-        </div>
-        <div className="form-footer">
-          <Link to="/sign-up">Register</Link>
-          <Link to="/forgot">Forgot password?</Link>
-        </div>
+          </div>
+          <div className="form-footer">
+            <Link to="/sign-up">Register</Link>
+            <Link to="/forgot">Forgot password?</Link>
+          </div>{' '}
+        </form>
       </div>
     </div>
   );

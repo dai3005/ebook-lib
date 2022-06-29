@@ -1,5 +1,5 @@
 import { TextField } from '@mui/material';
-import React from 'react';
+import React, { useEffect } from 'react';
 import CustomBtn from '../../Components/CustomButton';
 import './style.css';
 
@@ -9,6 +9,10 @@ const SignUp = () => {
     width: '90%',
     borderRadius: '5px',
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="container">
